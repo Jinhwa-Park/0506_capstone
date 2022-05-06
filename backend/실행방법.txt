@@ -1,0 +1,8 @@
+0. 초기상태
+- npm install
+
+1. 실행방법
+npm run start
+
+2. URL
+localhost:5000/api/alyac
