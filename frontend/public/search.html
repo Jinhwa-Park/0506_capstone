@@ -15,7 +15,8 @@
             class="jsbin"
             src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
         ></script>
-        <div class="file-upload">
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+            <div class="file-upload">
             <button
                 class="file-upload-btn"
                 type="button"
@@ -44,7 +45,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div></form>
         <script>
             function readURL(input) {
                 if (input.files && input.files[0]) {
@@ -76,6 +77,24 @@
             $('.image-upload-wrap').bind('dragleave', function () {
                 $('.image-upload-wrap').removeClass('image-dropping');
             });
+
+            const http = require("http");
+            const path = require("path");
+            const fs = require("fs");
+
+            const express = require("express");
+
+            const app = express();
+            const httpServer = http.createServer(app);
+
+            const PORT = process.env.PORT || 5000;
+
+            httpServer.listen(PORT, () => {
+            console.log(`Server is listening on port ${PORT}`);
+            });
+
+            // put the HTML file containing your form in a directory named "public" (relative to where this script is located)
+            app.get("/", express.static(path.join(__dirname, "./public")));
         </script>
 		<button class="font">
 			검색하기
