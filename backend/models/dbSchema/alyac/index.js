@@ -1,6 +1,5 @@
 import _ from 'lodash'
 import mongoose from 'mongoose'
-
 import alyacSchema from "./alyac";
 
 const schemes = { alyacSchema }
@@ -15,7 +14,8 @@ function _discriminate(db, base, name, schema) {
 }
 
 /**
- *
+ * alyac table(schema 정보를 가져온다)
+ * 정의한 alyacSchema 를 가져와서 반환한다. DB Table 생성
  * @param database
  * @returns {Dictionary<mongoose/Model>}
  */

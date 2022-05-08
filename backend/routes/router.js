@@ -1,11 +1,9 @@
-/**
- * Caution! Don't edit it.
- * Structure changes can create errors.
- * Please contact your administrator.
- */
 
 import express from 'express'
 
+/**
+ * 정의한 get, post, put, delete 라우터 정보를 자동으로 등록한다.
+ */
 export default class Router {
   constructor(getRouterList, postRouterList, putRouterList, deleteRouterList) {
     this.router = express.Router({})
